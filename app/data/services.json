@@ -1,0 +1,18 @@
+[
+  {
+    "title": " Bespoke Tailoring",
+    "description": "Get the perfect fit with our bespoke tailoring service. We offer custom alterations for select pieces, ensuring every garment complements your body and style preferences flawlessly.",
+    "image": "tailor.png"
+  },
+  {
+    "title": " Sustainability Consulting for Brands",
+    "description": "We collaborate with emerging brands to promote sustainable practices in the fashion industry. From eco-friendly materials to ethical manufacturing, we help brands reduce their environmental impact.",
+    "image": "consut.png"
+  },
+  {
+    "title": " Personal Branding & Image Consulting",
+    "description": "We help individuals build their personal brands by providing expert advice on dressing on professional success",
+    "image": "personal.png"
+  }
+ 
+]
