@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import Navbar from './Navbar';
-
+import { motion } from 'framer-motion';
 export default function Hero() {
   const images = [
     { src: 'image1.png', alt: 'Fashion Image 1' },
@@ -16,28 +16,108 @@ export default function Hero() {
       <div className="bg-neutral-100 min-h-screen flex flex-col items-center justify-center text-center px-4">
 
         <div className="max-w-3xl">
-          <h2 className="text-xl text-gray-500 mb-4">
+          <motion.h2
+          initial={{
+            y:50,
+            opacity:0
+          }}
+          whileInView={{
+            y:0,
+            opacity:1
+          }}
+          transition={{
+            duration:0.7,
+            ease:"easeInOut"
+          }}
+          viewport={{
+            once:true
+          }}
+          className="text-xl text-gray-500 mb-4">
             Experience fashion like never before
-          </h2>
-          <h1 className="text-4xl text-black md:text-5xl font-bold leading-tight mb-6">
+          </motion.h2>
+          <motion.h1
+          initial={{
+            y:50,
+            opacity:0
+          }}
+          whileInView={{
+            y:0,
+            opacity:1
+          }}
+          transition={{
+            duration:0.7,
+            ease:"easeInOut"
+          }}
+          viewport={{
+            once:true
+          }}
+          className="text-4xl text-black md:text-5xl font-bold leading-tight mb-6">
             Your Ultimate Destination for Timeless Style.
-          </h1>
-          <p className="text-lg text-gray-600 mb-8">
+          </motion.h1>
+          <motion.p
+          initial={{
+            y:50,
+            opacity:0
+          }}
+          whileInView={{
+            y:0,
+            opacity:1
+          }}
+          transition={{
+            duration:0.7,
+            ease:"easeInOut"
+          }}
+          viewport={{
+            once:true
+          }}
+          className="text-lg text-gray-600 mb-8">
             Discover a world of fashion-forward trends, curated collections, and
             timeless pieces that inspire. Unleash your inner fashionista and
             embark on a journey of confidence, elegance, and impeccable style.
-          </p>
+          </motion.p>
           <a href="https://wa.me/447763238511">
-            <button className="bg-black text-white text-lg py-3 px-8 rounded-full">
+            <motion.button
+            initial={{
+              y:50,
+              opacity:0
+            }}
+            whileInView={{
+              y:0,
+              opacity:1
+            }}
+            transition={{
+              duration:0.7,
+              ease:"easeInOut"
+            }}
+            viewport={{
+              once:true
+            }}
+            className="bg-black text-white text-lg py-3 px-8 rounded-full">
               Get started
-            </button>
+            </motion.button>
           </a>
         </div>
 
         {/* Image Gallery */}
         <div className="mt-16 flex justify-center gap-4 max-w-4xl">
           {images.map((image, index) => (
-            <div
+            <motion.div
+            initial={{
+              y:50,
+              opacity:0
+            }}
+            whileInView={{
+              y:0,
+              opacity:1
+            }}
+            transition={{
+              duration:0.7,
+              ease:"easeInOut",
+              delay: 0.05 * index
+            }}
+            viewport={{
+              once:true
+            }}
               key={index}
               className="w-1/4 overflow-hidden rounded-xl"
               style={{
@@ -49,7 +129,7 @@ export default function Hero() {
                 alt={image.alt}
                 className="w-full h-full object-cover"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

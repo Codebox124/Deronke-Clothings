@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import servicesData from '@/app/data/services.json';
 import { PiGreaterThanLight } from 'react-icons/pi';
-
+import { motion } from 'framer-motion';
 interface ServiceItem {
     title: string;
     description: string;
@@ -47,7 +47,8 @@ export default function Service() {
     return (
         <div id='services' className='mx-auto my-24 px-4 md:px-10'>
             {/* Header Section */}
-            <h1 className='border-l-4 border-[#A5775E] pl-4 text-black mb-8 text-3xl font-bold animate-fade-in'>Our Services</h1>
+            <h1
+            className='border-l-4 border-[#A5775E] pl-4 text-black mb-8 text-3xl font-bold animate-fade-in'>Our Services</h1>
 
             {/* Background Section */}
             <div
@@ -56,16 +57,20 @@ export default function Service() {
             >
                 <div className='bg-[#1E1E1E66] md:h-full h-2/3 md:px-10 px-5 absolute md:relative bottom-0 flex md:gap-5 gap-8 flex-col justify-center animate-slide-in-left rounded-md md:rounded-none'>
                     <div>
-                        <h1 className='text-white text-3xl md:text-5xl font-bold leading-tight'>Custom</h1>
-                        <span className='text-4xl md:text-6xl text-white font-bold'>Styling Services</span>
+                        <h1
+                        className='text-white text-3xl md:text-5xl font-bold leading-tight'>Custom</h1>
+                        <span 
+                        className='text-4xl md:text-6xl text-white font-bold'>Styling Services</span>
                     </div>
                     <div>
-                        <span className='text-white text-base md:text-lg leading-relaxed'>
+                        <span 
+                        className='text-white text-base md:text-lg leading-relaxed'>
                             Elevate your wardrobe with personalized styling advice from our fashion experts. Whether you're curating your everyday look or prepping for a special occasion, we’ll help you create a style that’s uniquely yours.
                         </span>
                     </div>
                     <div>
-                        <button className="px-6 py-3 bg-[#A5775E] text-white font-semibold rounded-md hover:bg-[#8f624e] transition-all">
+                        <button
+                        className="px-6 py-3 bg-[#A5775E] text-white font-semibold rounded-md hover:bg-[#8f624e] transition-all">
                             Get More Info
                         </button>
                     </div>
@@ -75,9 +80,25 @@ export default function Service() {
             {/* Desktop View */}
             <div className='hidden md:grid grid-cols-1 lg:grid-cols-2 mt-10 gap-8 text-black animate-fade-in'>
                 {services.map((service, index) => (
-                    <div
+                    <motion.div
+                    initial={{
+                        y:50,
+                        opacity:0
+                      }}
+                      whileInView={{
+                        y:0,
+                        opacity:1
+                      }}
+                      transition={{
+                        duration:0.7,
+                        ease:"easeInOut",
+                        delay: 0.05 * index
+                      }}
+                      viewport={{
+                        once:true
+                      }}
                         key={index}
-                        className='flex gap-4 bg-[#FAF3F2] p-6 rounded-md shadow-md hover:shadow-lg transition-all'
+                        className='flex gap-4 bg-[#FAF3F2] p-6 rounded-md shadow-md hover:shadow-lg service transition-shadow'
                     >
                         <div className='w-1/3'>
                             <img
@@ -90,7 +111,7 @@ export default function Service() {
                             <h1 className='text-xl font-bold'>{service.title}</h1>
                             <span className='text-sm text-gray-700'>{service.description}</span>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
 

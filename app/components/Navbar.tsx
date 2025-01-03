@@ -5,7 +5,6 @@ import { BiMenu } from 'react-icons/bi';
 import { MdClose } from "react-icons/md";
 import Image from 'next/image';
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
-
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -63,11 +62,11 @@ export default function Navbar() {
 
                         {/* Menu links */}
                         <div className='my-6 flex flex-col gap-4 pl-6'>
-                            <a href="#home">Home</a>
-                            <a href="#about">About Us</a>
-                            <a href="#services">Services</a>
-                            <a href="#gallery">Gallery</a>
-                            <a href="#testimonia">Testimonia</a>
+                            <a onClick={()=>{setIsOpen(false)}} href="#home">Home</a>
+                            <a onClick={()=>{setIsOpen(false)}} href="#about">About Us</a>
+                            <a onClick={()=>{setIsOpen(false)}} href="#services">Services</a>
+                            <a onClick={()=>{setIsOpen(false)}} href="#gallery">Gallery</a>
+                            <a onClick={()=>{setIsOpen(false)}} href="#testimonia">Testimonia</a>
                         </div>
 
                         {/* Hours & Social links */}
